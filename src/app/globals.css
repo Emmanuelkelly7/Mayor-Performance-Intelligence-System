@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #070707;
+  --color-foreground: #efe6d7;
+  
+  --color-primary: #f2ca50;
+  --color-primary-container: #d4af37;
+  --color-on-primary: #332705;
+  
+  --color-secondary: #c8c6c5;
+  --color-on-secondary: #313030;
+  
+  --color-surface: #111111;
+  --color-on-surface: #efe6d7;
+  --color-on-surface-variant: #cdbfa8;
+  
+  --color-outline: #8e866f;
+  --color-outline-variant: #3c3528;
+  
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono-data: var(--font-space-grotesk), monospace;
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-md: 16px;
+  --spacing-sm: 8px;
+  --spacing-xs: 4px;
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    background:
+      radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 30%),
+      #070707;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at top left, rgba(212, 175, 55, 0.06), transparent 24%),
+      radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.04), transparent 20%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: rgba(242, 202, 80, 0.22);
+  }
+}
+
+@layer components {
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+  }
+
+  .login-card {
+    background-color: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .login-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  }
+
+  .input-glow:focus {
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+  }
+
+  .app-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .city-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBE2NBfqfI_nUzjEVuJPrb4wcT1P2qGHD4NjBy9K0cNnUwYoDhAlwjGDkMO4A0E1JTNJDCONlnJauAXyUijE29rWO5L4ApLRkQ7tCMuHRymjkxmsMqM5Dn04cp0-VrTtUk04kHJVPtsbVPcNBUMMLVeXfDYB4VHz9YdowZMCn9dGdRlKFlfd-DOwX10fskq5sWmdj5v0jd2bdA-HHfOIUFgJQ1LY2K3l1dwdDdnmQAbN47SbG_uvuhiRQIC0XvDTIx3lRcvjNcfiOnp);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    filter: grayscale(100%) brightness(0.2);
+  }
+
+  .executive-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.94), rgba(10, 10, 10, 0.92));
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px);
+  }
+}

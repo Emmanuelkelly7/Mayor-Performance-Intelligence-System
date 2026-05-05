@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Newsletter Builder | Mayor Intel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary": "#313030",
+                        "surface-bright": "#3d392f",
+                        "primary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary": "#f2ca50",
+                        "surface-container": "#231f17",
+                        "tertiary-fixed": "#dbe1ff",
+                        "surface-container-low": "#1f1b13",
+                        "on-surface": "#eae1d4",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#082b72",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#27438a",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-background": "#eae1d4",
+                        "inverse-surface": "#eae1d4",
+                        "outline": "#99907c",
+                        "background": "#16130b",
+                        "error": "#ffb4ab",
+                        "surface": "#16130b",
+                        "outline-variant": "#4d4635",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#d4af37",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary-container": "#474746",
+                        "surface-variant": "#38342b",
+                        "error-container": "#93000a",
+                        "surface-tint": "#e9c349",
+                        "surface-dim": "#16130b",
+                        "on-primary": "#3c2f00",
+                        "surface-container-high": "#2d2a21",
+                        "inverse-on-surface": "#343027",
+                        "tertiary": "#bfcdff",
+                        "primary-fixed": "#ffe088",
+                        "tertiary-container": "#97b0ff",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-tertiary-container": "#254188",
+                        "surface-container-lowest": "#110e07",
+                        "secondary": "#c8c6c5",
+                        "surface-container-highest": "#38342b",
+                        "on-tertiary-fixed": "#00174b",
+                        "on-surface-variant": "#d0c5af"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "container-max": "1440px",
+                        "2xl": "64px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "h3": ["Inter"],
+                        "mono-data": ["Space Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "mono-data": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #eae1d4;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        .premium-border-top {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .gold-glow:focus {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-64 border-r border-white/10 bg-[#0A0A0A] dark:bg-[#0A0A0A] shadow-2xl flex flex-col py-8 px-4 z-50">
+<div class="mb-12 flex items-center px-2">
+<div class="h-10 w-10 bg-primary-container rounded-lg flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-[#0A0A0A]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tighter text-[#D4AF37]">Mayor Intel</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-white/40">Executive Portal</p>
+</div>
+</div>
+<div class="space-y-2 flex-grow">
+<div class="flex items-center space-x-3 py-3 px-4 rounded-lg cursor-pointer active:scale-95 transition-colors duration-200 text-white/60 hover:text-white/90 hover:bg-white/5 font-inter text-sm font-medium tracking-tight">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="flex items-center space-x-3 py-3 px-4 rounded-lg cursor-pointer active:scale-95 transition-colors duration-200 text-white/60 hover:text-white/90 hover:bg-white/5 font-inter text-sm font-medium tracking-tight">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</div>
+<div class="flex items-center space-x-3 py-3 px-4 rounded-lg cursor-pointer active:scale-95 transition-colors duration-200 text-white/60 hover:text-white/90 hover:bg-white/5 font-inter text-sm font-medium tracking-tight">
+<span class="material-symbols-outlined">upload_file</span>
+<span>Upload Data</span>
+</div>
+<div class="flex items-center space-x-3 py-3 px-4 rounded-lg cursor-pointer active:scale-95 transition-colors duration-200 text-white/60 hover:text-white/90 hover:bg-white/5 font-inter text-sm font-medium tracking-tight">
+<span class="material-symbols-outlined">psychology</span>
+<span>AI Insights</span>
+</div>
+<div class="flex items-center space-x-3 py-3 px-4 rounded-lg cursor-pointer active:scale-95 transition-colors duration-200 text-[#D4AF37] bg-white/5 border-r-2 border-[#D4AF37] font-inter text-sm font-medium tracking-tight">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span>Newsletter</span>
+</div>
+<div class="flex items-center space-x-3 py-3 px-4 rounded-lg cursor-pointer active:scale-95 transition-colors duration-200 text-white/60 hover:text-white/90 hover:bg-white/5 font-inter text-sm font-medium tracking-tight">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center px-2">
+<img alt="Mayor Profile" class="h-10 w-10 rounded-full object-cover border border-[#D4AF37]/30" data-alt="A professional headshot of a senior executive male in his 50s, wearing a charcoal suit and a gold-toned tie. He is positioned against a blurred dark office background with warm, cinematic lighting that creates a high-contrast, authoritative mood consistent with a luxury government intelligence platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChiJvcT6xg5CcR-8Xnh4XBKE9XUZv2raziSmUF9Vsjq4siiouzqO6aZC-PV9mUzUSiNx5MRU2dJyTLHd-hKevLxR4I3airToaP_jBX7aMXZ522n_TMKnrFJ_QLl14BNvZSo0FsMOsVMvFhrALsHxJno_5x7_9eAaMPtgPiwUKIm_2AGsI-SaleeWQ7lVLA1bRMENszWuRl4Lo2psqjuNA6jMC8aUw6M2258REFT46DifcXGlDQl8gqginkfpe83jbQarCmI1B3LLDp"/>
+<div class="ml-3">
+<p class="text-sm font-bold text-white">Hon. J. Sterling</p>
+<p class="text-xs text-white/40">City Mayor</p>
+</div>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-white/10 bg-[#0A0A0A]/80 backdrop-blur-md flex justify-between items-center px-10 z-40">
+<div class="flex items-center space-x-4">
+<span class="text-xl font-black uppercase tracking-widest text-[#D4AF37] font-inter">Newsletter Builder</span>
+<div class="h-4 w-px bg-white/10"></div>
+<span class="text-white/50 text-sm font-inter">Draft: Weekly Executive Briefing - Oct 24</span>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-4 mr-4">
+<button class="text-white/70 hover:text-white transition-opacity cursor-pointer">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<button class="text-white/70 hover:text-white transition-opacity cursor-pointer relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 h-2 w-2 bg-[#D4AF37] rounded-full"></span>
+</button>
+</div>
+<button class="px-6 py-2 bg-primary-container text-[#0A0A0A] font-inter text-sm font-bold rounded-lg cursor-pointer active:scale-95 transition-all shadow-lg hover:brightness-110">
+                Executive Summary
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 h-screen overflow-hidden flex bg-[#0A0A0A]">
+<!-- Left Column: Content Input Panel -->
+<section class="w-1/2 p-xl overflow-y-auto border-r border-white/5 flex flex-col space-y-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-h1 text-h1 text-white">Briefing Composer</h2>
+<div class="flex items-center space-x-3">
+<div class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full flex items-center">
+<span class="h-2 w-2 bg-primary rounded-full animate-pulse mr-2"></span>
+<span class="text-[10px] font-mono-data text-primary uppercase tracking-wider">AI Copilot Active</span>
+</div>
+</div>
+</div>
+<!-- Content Builder Form -->
+<div class="space-y-xl">
+<!-- Title Block -->
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-white/50 uppercase">Briefing Title</label>
+<button class="text-xs text-primary hover:underline flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">auto_awesome</span>
+                            Generate Title
+                        </button>
+</div>
+<input class="w-full bg-[#121212] border border-white/10 rounded-xl px-lg py-md text-white font-h2 text-h2 gold-glow transition-all outline-none" type="text" value="Weekly Executive Briefing: Infrastructure &amp; Safety Initiatives"/>
+</div>
+<!-- AI Generation Toolset (Bento Grid Style) -->
+<div class="grid grid-cols-2 gap-md">
+<div class="glass-panel p-lg rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-white/5 transition-all">
+<div>
+<span class="material-symbols-outlined text-primary mb-2">summarize</span>
+<h3 class="font-h3 text-h3 text-white mb-2">Summarize Updates</h3>
+<p class="text-body-sm text-white/40">Convert raw department data into executive bullet points.</p>
+</div>
+</div>
+<div class="glass-panel p-lg rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-white/5 transition-all">
+<div>
+<span class="material-symbols-outlined text-primary mb-2">trending_up</span>
+<h3 class="font-h3 text-h3 text-white mb-2">Economic Outlook</h3>
+<p class="text-body-sm text-white/40">Inject real-time GDP and fiscal growth metrics.</p>
+</div>
+</div>
+</div>
+<!-- Text Editor Area -->
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-white/50 uppercase">Core Content</label>
+<div class="bg-[#121212] border border-white/10 rounded-xl overflow-hidden focus-within:border-primary/40 transition-all">
+<div class="flex items-center space-x-4 px-md py-sm bg-white/5 border-b border-white/10">
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-white">format_bold</span>
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-white">format_italic</span>
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-white">format_list_bulleted</span>
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-white">link</span>
+<div class="h-4 w-px bg-white/10"></div>
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-white">image</span>
+</div>
+<textarea class="w-full h-64 bg-transparent border-none text-body-md text-white/80 p-lg outline-none resize-none leading-relaxed" placeholder="Start writing the mayoral briefing here...">Our primary focus for this fiscal week remains the completion of the Midtown Transit Hub. Recent data indicates a 12% increase in passenger throughput since the pilot phase began. 
+
+Furthermore, the public safety initiative "Secure Streets" has seen a 5% drop in incident reports in the downtown corridor. We must continue to emphasize the role of technology-driven policing in these results...</textarea>
+</div>
+</div>
+<!-- Primary AI Action -->
+<button class="w-full py-xl bg-gradient-to-r from-[#D4AF37] to-[#F2CA50] text-[#0A0A0A] font-display text-h3 rounded-xl flex items-center justify-center space-x-3 active:scale-[0.98] transition-all shadow-[0_0_30px_rgba(212,175,55,0.25)] premium-border-top">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>Generate with AI Intelligence</span>
+</button>
+</div>
+</section>
+<!-- Right Column: Live Email Preview -->
+<section class="w-1/2 bg-[#050505] p-xl flex flex-col">
+<div class="flex items-center justify-between mb-xl">
+<div class="flex items-center space-x-4">
+<div class="flex -space-x-2">
+<div class="h-8 w-8 rounded-full border-2 border-[#050505] bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">desktop_windows</span>
+</div>
+<div class="h-8 w-8 rounded-full border-2 border-[#050505] bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">smartphone</span>
+</div>
+</div>
+<span class="text-body-sm text-white/50">Live Preview: Desktop</span>
+</div>
+<div class="flex space-x-3">
+<button class="px-md py-sm border border-white/10 text-white/80 rounded-lg hover:bg-white/5 transition-colors font-inter text-sm">Preview</button>
+<button class="px-md py-sm bg-white text-[#0A0A0A] font-bold rounded-lg active:scale-95 transition-all font-inter text-sm flex items-center">
+<span class="material-symbols-outlined text-sm mr-2">send</span>
+                        Send Briefing
+                    </button>
+</div>
+</div>
+<!-- Email Frame -->
+<div class="flex-grow bg-[#121212] rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col">
+<!-- Browser Header Mockup -->
+<div class="h-10 bg-[#1A1A1A] px-md flex items-center space-x-2">
+<div class="h-2.5 w-2.5 rounded-full bg-white/10"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-white/10"></div>
+<div class="h-2.5 w-2.5 rounded-full bg-white/10"></div>
+</div>
+<!-- Email Content Area -->
+<div class="flex-grow overflow-y-auto bg-white p-xl text-black">
+<!-- Newsletter Header -->
+<div class="border-b-4 border-[#D4AF37] pb-lg mb-xl flex justify-between items-end">
+<div>
+<p class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D4AF37]">Official Executive Communication</p>
+<h1 class="text-4xl font-black text-black leading-tight uppercase tracking-tighter">City Hall Intelligence</h1>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-gray-400">VOL. 24 / NO. 12</p>
+<p class="text-[10px] font-bold text-gray-400">OCTOBER 2024</p>
+</div>
+</div>
+<!-- Email Hero Image -->
+<div class="w-full h-64 bg-gray-100 rounded-lg mb-xl overflow-hidden relative">
+<img alt="City Skyline" class="w-full h-full object-cover grayscale brightness-50" data-alt="A cinematic, wide-angle shot of a modern city skyline at dusk, captured with long exposure to show light trails of traffic. The atmosphere is sophisticated and quiet, with deep blues and blacks dominating the frame, accented by tiny dots of gold light from building windows, perfectly matching the premium branding of the executive portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANXBhGKEeVgcstZ2Rp97YBh9U-zUruFKwN78W-OSI7G5VtFx1-AauyI567SyD_hXS1_3pYRaANSDkj6GG1hPoJvhFH_IcYMR-L8l0sgw7aWr8dF7HJEDr-wDNq_sC8_JTAK0DhpKJbrjfxWBLGCcwgfxsKyZtCoVgJClDxWzYGmpSJYx5ZQAFCDHbiVhbh454RtmHTY7M5jzo-iO_xiGRGRsXuqJrELW_lRO77hKsKv8Ef-uvz2_NtNp17nBSfbHVST1MkYHKMK1bc"/>
+<div class="absolute bottom-0 left-0 p-lg bg-gradient-to-t from-black/80 to-transparent w-full">
+<h2 class="text-white text-2xl font-bold">Reshaping Our Urban Core</h2>
+</div>
+</div>
+<!-- Content Body -->
+<div class="prose prose-sm max-w-none">
+<p class="text-lg font-semibold text-gray-800 leading-snug mb-md italic">"Innovation is not just a policy, it is our civic duty to the future."</p>
+<p class="text-gray-600 mb-lg">Weekly Executive Briefing: Infrastructure &amp; Safety Initiatives. Our primary focus for this fiscal week remains the completion of the Midtown Transit Hub. Recent data indicates a 12% increase in passenger throughput since the pilot phase began.</p>
+<div class="grid grid-cols-2 gap-lg mb-lg">
+<div class="p-md bg-gray-50 border-l-4 border-[#D4AF37]">
+<p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Public Safety</p>
+<p class="text-2xl font-bold text-black">-5.2%</p>
+<p class="text-xs text-gray-500">Incident drop in downtown</p>
+</div>
+<div class="p-md bg-gray-50 border-l-4 border-[#D4AF37]">
+<p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Transit Efficiency</p>
+<p class="text-2xl font-bold text-black">+12.0%</p>
+<p class="text-xs text-gray-500">Commuter throughput</p>
+</div>
+</div>
+<p class="text-gray-600">Furthermore, the public safety initiative "Secure Streets" has seen a 5% drop in incident reports in the downtown corridor. We must continue to emphasize the role of technology-driven policing in these results...</p>
+<div class="mt-2xl pt-lg border-t border-gray-100 text-center">
+<button class="px-xl py-md bg-black text-white font-bold rounded uppercase tracking-widest text-xs">Read Full Report</button>
+</div>
+</div>
+<!-- Email Footer -->
+<div class="mt-2xl text-center space-y-sm">
+<div class="flex justify-center space-x-4 grayscale opacity-50">
+<span class="material-symbols-outlined text-black">share</span>
+<span class="material-symbols-outlined text-black">print</span>
+<span class="material-symbols-outlined text-black">help</span>
+</div>
+<p class="text-[10px] text-gray-400 uppercase tracking-tighter">Sent from the Mayor Intelligence Executive Portal. © 2024 City Hall Governance.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

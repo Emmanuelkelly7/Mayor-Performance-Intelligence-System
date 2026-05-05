@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#1c1b1b",
+            "on-secondary": "#313030",
+            "surface-bright": "#3d392f",
+            "primary-fixed-dim": "#e9c349",
+            "inverse-primary": "#735c00",
+            "on-primary-fixed": "#241a00",
+            "secondary-fixed": "#e5e2e1",
+            "primary": "#f2ca50",
+            "surface-container": "#231f17",
+            "tertiary-fixed": "#dbe1ff",
+            "surface-container-low": "#1f1b13",
+            "on-surface": "#eae1d4",
+            "on-primary-container": "#554300",
+            "tertiary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#082b72",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#27438a",
+            "on-primary-fixed-variant": "#574500",
+            "on-background": "#eae1d4",
+            "inverse-surface": "#eae1d4",
+            "outline": "#99907c",
+            "background": "#16130b",
+            "error": "#ffb4ab",
+            "surface": "#16130b",
+            "outline-variant": "#4d4635",
+            "on-error": "#690005",
+            "secondary-fixed-dim": "#c8c6c5",
+            "primary-container": "#d4af37",
+            "on-secondary-fixed-variant": "#474746",
+            "secondary-container": "#474746",
+            "surface-variant": "#38342b",
+            "error-container": "#93000a",
+            "surface-tint": "#e9c349",
+            "surface-dim": "#16130b",
+            "on-primary": "#3c2f00",
+            "surface-container-high": "#2d2a21",
+            "inverse-on-surface": "#343027",
+            "tertiary": "#bfcdff",
+            "primary-fixed": "#ffe088",
+            "tertiary-container": "#97b0ff",
+            "on-secondary-container": "#b7b5b4",
+            "on-tertiary-container": "#254188",
+            "surface-container-lowest": "#110e07",
+            "secondary": "#c8c6c5",
+            "surface-container-highest": "#38342b",
+            "on-tertiary-fixed": "#00174b",
+            "on-surface-variant": "#d0c5af"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "8px",
+            "container-max": "1440px",
+            "2xl": "64px",
+            "md": "16px",
+            "xl": "40px",
+            "xs": "4px",
+            "lg": "24px",
+            "unit": "4px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "h2": ["Inter"],
+            "display": ["Inter"],
+            "h3": ["Inter"],
+            "mono-data": ["Space Grotesk"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "h1": ["Inter"],
+            "label-caps": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "mono-data": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+            "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: #121212;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+    .gold-glow:focus {
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      outline: none;
+    }
+  </style>
+</head>
+<body class="bg-[#0A0A0A] text-on-surface font-body-md overflow-x-hidden">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-white/10 bg-[#0A0A0A] shadow-2xl flex flex-col py-8 px-4 z-50">
+<div class="flex items-center gap-3 px-2 mb-10">
+<div class="w-10 h-10 rounded-lg flex items-center justify-center bg-primary-container/20 border border-primary-container/30">
+<span class="material-symbols-outlined text-[#D4AF37]" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tighter text-[#D4AF37]">Mayor Intel</h1>
+<p class="text-[10px] uppercase tracking-widest text-white/40">Executive Portal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/60 hover:text-white/90 hover:bg-white/5 transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-sm font-medium tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/60 hover:text-white/90 hover:bg-white/5 transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-inter text-sm font-medium tracking-tight">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/60 hover:text-white/90 hover:bg-white/5 transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="upload_file">upload_file</span>
+<span class="font-inter text-sm font-medium tracking-tight">Upload Data</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#D4AF37] bg-white/5 border-r-2 border-[#D4AF37] cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-inter text-sm font-medium tracking-tight">AI Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/60 hover:text-white/90 hover:bg-white/5 transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-inter text-sm font-medium tracking-tight">Newsletter</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/60 hover:text-white/90 hover:bg-white/5 transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-sm font-medium tracking-tight">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-2 pt-4 border-t border-white/5">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-white/5">
+<img class="w-10 h-10 rounded-full object-cover grayscale" data-alt="A professional headshot of a mature executive in a high-end tailored charcoal suit, set against a blurred minimalist architectural background with gold accents. The lighting is dramatic and low-key, reflecting a command-center aesthetic with deep shadows and sophisticated highlights on the face, embodying executive authority and technological foresight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn20yA4rEoc8I1b6s9L6BTTFP2vvOPBUqpty89KUGlIvnnO7j_306lF5N3sIGp71d_IdRYKksOgOAr6UnRZLrczL6_m1ErB0UDmpjrSwPvhQ55YfEUL2LBJU94Mn_bfUDmoiDzEGokHwV0nwG57RO_tDbnQFM1MNKKq21J1r6MkrulrWHTQc7kSpTR3Fo9h05rDA2H6N5uUCKJB2YVwdqIOsq8_JnDGXPgtdFltfiaAA7zEe9tQyfoihF0jbD746K2cVUbKzKsGUSh"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-white truncate">Mayor Harrison</p>
+<p class="text-[10px] text-white/40 truncate">City Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-white/10 bg-[#0A0A0A]/80 backdrop-blur-md flex justify-between items-center px-10 z-40">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-black uppercase tracking-widest text-[#D4AF37] font-inter">AI Insights</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-white/70">
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-opacity" data-icon="calendar_today">calendar_today</span>
+<div class="relative">
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-opacity" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</div>
+</div>
+<button class="bg-[#D4AF37] text-[#0A0A0A] px-6 py-2 rounded-full font-inter text-sm font-bold hover:brightness-110 transition-all active:scale-95">
+        Executive Summary
+      </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen bg-[#0A0A0A]">
+<div class="max-w-[1440px] mx-auto p-xl">
+<!-- Executive Summary Header -->
+<section class="mb-xl">
+<div class="flex items-end justify-between mb-lg">
+<div>
+<p class="text-label-caps text-primary mb-2">INTELLIGENCE STATUS: OPTIMIZED</p>
+<h1 class="font-display text-display text-white">Sentiment Outlook</h1>
+</div>
+<div class="flex gap-4">
+<div class="glass-card px-lg py-md rounded-xl flex flex-col">
+<span class="text-label-caps text-white/40 mb-1">DATA REFRESH</span>
+<span class="font-mono-data text-white">2 MIN AGO</span>
+</div>
+<div class="glass-card px-lg py-md rounded-xl flex flex-col">
+<span class="text-label-caps text-white/40 mb-1">NETWORK LOAD</span>
+<span class="font-mono-data text-primary">0.04 MS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid for AI Insights -->
+<div class="grid grid-cols-12 gap-lg mb-xl">
+<!-- Large Insight Card -->
+<div class="col-span-8 glass-card rounded-2xl p-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-lg opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-white" data-icon="trending_down">trending_down</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 text-error mb-4">
+<span class="material-symbols-outlined text-lg" data-icon="warning">warning</span>
+<span class="text-label-caps">Priority Awareness</span>
+</div>
+<h2 class="font-h1 text-h1 text-white mb-lg max-w-lg leading-tight">Engagement dropped by 12% this week across all municipal social channels.</h2>
+<div class="flex gap-xl items-center mt-xl pt-xl border-t border-white/5">
+<div>
+<p class="text-label-caps text-white/40 mb-1">PRIMARY CAUSE</p>
+<p class="text-body-md text-white font-medium">Algorithmic shift in local reach</p>
+</div>
+<div class="h-10 w-px bg-white/10"></div>
+<div>
+<p class="text-label-caps text-white/40 mb-1">PROPOSED RESPONSE</p>
+<p class="text-body-md text-white font-medium">Shift to video-first updates</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Insight Card -->
+<div class="col-span-4 glass-card rounded-2xl p-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-label-caps">High Efficiency</span>
+</div>
+<h3 class="font-h2 text-h2 text-white">Infrastructure posts perform 3x better</h3>
+<p class="mt-md text-white/60 font-body-sm">Data shows citizens prioritize tangible physical improvements over policy whitepapers.</p>
+</div>
+<div class="mt-lg pt-lg border-t border-white/5">
+<div class="h-12 w-full flex items-end gap-1">
+<div class="bg-primary/20 w-full h-[30%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[45%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[60%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[40%] rounded-t-sm"></div>
+<div class="bg-primary w-full h-[90%] rounded-t-sm"></div>
+</div>
+</div>
+</div>
+<!-- Heatmap Section -->
+<div class="col-span-12 glass-card rounded-2xl p-xl">
+<div class="flex justify-between items-center mb-xl">
+<div>
+<h3 class="font-h2 text-h2 text-white">Public Sentiment Heatmap</h3>
+<p class="text-white/60 font-body-sm">Real-time geographic emotional response tracking</p>
+</div>
+<div class="flex bg-white/5 p-1 rounded-lg">
+<button class="px-4 py-1.5 rounded-md text-label-caps text-primary bg-white/10">CITY CENTER</button>
+<button class="px-4 py-1.5 rounded-md text-label-caps text-white/40">OUTER DISTRICTS</button>
+</div>
+</div>
+<div class="h-[400px] w-full rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="A highly detailed 3D topographic map of a modern urban city center seen from a bird's eye view. Overlaid on the map are luminous heatmap gradients shifting from deep amber gold to charcoal black, representing intense data clusters. The image captures a sophisticated surveillance and planning aesthetic with thin neon grid lines and high-contrast digital artifacts against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbEUyFpVPrIIRdbmrFSmQSOXaGyeAcXxAi3bYEdEQj0F1SR9aJtg_TzGJxU2e_WLZQnrVo-t-CYgcrSZnFhrXDAhsjz0oWqc0Zq-ZRLo_9zZsmQ141PvBKIGML56DaUhLQfWz6EFhO32F3G8WDCZo6qB6zZSk7c3QfIVg-Ngh8sXXs3myB8SKPxmgRpzPHXetpnt5lqdN-3-NHocuVggaHVuHa0EPO9qY3twM8LwpPS4Qsgmi_Al4R7xTlfSQ5TvrREWS4W0khtTin"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none"></div>
+<!-- Sentiment Orbs -->
+<div class="absolute top-1/4 left-1/3 w-24 h-24 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute top-2/3 right-1/4 w-32 h-32 bg-error/10 rounded-full blur-3xl"></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="text-center">
+<div class="flex justify-center gap-2 items-center mb-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+<span class="text-label-caps text-primary tracking-widest">REAL-TIME MONITORING</span>
+</div>
+<h4 class="text-4xl font-bold text-white uppercase tracking-tighter">78% Positive Response</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommendations Section -->
+<div class="col-span-6 glass-card rounded-2xl p-xl">
+<h3 class="font-h2 text-h2 text-white mb-lg">Actionable Directives</h3>
+<div class="space-y-lg">
+<div class="flex gap-md group cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+</div>
+<div class="flex-1 border-b border-white/5 pb-lg">
+<p class="font-body-md text-white font-semibold">Schedule more Town Hall updates</p>
+<p class="font-body-sm text-white/60 mt-1">Direct communication correlates with an 8% lift in trust metrics for the Mayor’s office.</p>
+</div>
+</div>
+<div class="flex gap-md group cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+<span class="material-symbols-outlined" data-icon="imagesmode">imagesmode</span>
+</div>
+<div class="flex-1 border-b border-white/5 pb-lg">
+<p class="font-body-md text-white font-semibold">Prioritize visual data storytelling</p>
+<p class="font-body-sm text-white/60 mt-1">Infographics about budget allocation receive 45% more shares than text-only reports.</p>
+</div>
+</div>
+<div class="flex gap-md group cursor-pointer">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-white font-semibold">Optimize post timing to 7:00 AM</p>
+<p class="font-body-sm text-white/60 mt-1">Citizen activity peaks during morning commutes. Scheduling adjustments recommended.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Word Cloud / Keyword Analysis -->
+<div class="col-span-6 glass-card rounded-2xl p-xl flex flex-col">
+<div class="flex justify-between items-start mb-xl">
+<div>
+<h3 class="font-h2 text-h2 text-white">Sentiment Keywords</h3>
+<p class="text-white/60 font-body-sm">Trending civic discourse terms</p>
+</div>
+<span class="text-label-caps text-primary px-3 py-1 bg-primary/10 rounded-full">ACTIVE SCANNING</span>
+</div>
+<div class="flex-1 flex flex-wrap gap-4 items-center justify-center content-center p-lg">
+<span class="text-4xl font-black text-primary opacity-90 cursor-default hover:scale-110 transition-transform">Infrastructure</span>
+<span class="text-2xl font-bold text-white opacity-70 cursor-default hover:scale-110 transition-transform">Transparency</span>
+<span class="text-lg font-medium text-white opacity-40 cursor-default hover:scale-110 transition-transform">Parks</span>
+<span class="text-5xl font-black text-white cursor-default hover:scale-110 transition-transform">Housing</span>
+<span class="text-xl font-medium text-white opacity-50 cursor-default hover:scale-110 transition-transform">Sustainability</span>
+<span class="text-3xl font-bold text-primary opacity-80 cursor-default hover:scale-110 transition-transform">Education</span>
+<span class="text-lg font-medium text-white opacity-30 cursor-default hover:scale-110 transition-transform">Traffic</span>
+<span class="text-2xl font-bold text-white opacity-60 cursor-default hover:scale-110 transition-transform">Public Health</span>
+<span class="text-4xl font-black text-white opacity-90 cursor-default hover:scale-110 transition-transform">Innovation</span>
+</div>
+<div class="mt-xl text-center">
+<button class="text-label-caps text-white/40 border border-white/10 px-lg py-sm rounded-full hover:bg-white/5 hover:text-white transition-all">VIEW FULL CORPUS</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Hidden on AI Insights per rules, but shown here for layout completeness if needed elsewhere - currently suppressed as per hierarchy for details/analytical screens) -->
+</body></html>
