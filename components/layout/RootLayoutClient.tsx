@@ -23,7 +23,7 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen">
       {!isLoginPage && <Sidebar />}
       <div className={cn(
-        "flex-1 transition-all duration-300",
+        "flex-1 transition-all duration-300 overflow-x-hidden",
         !isLoginPage ? "md:ml-16" : ""
       )}>
         {!isLoginPage && <Header />}

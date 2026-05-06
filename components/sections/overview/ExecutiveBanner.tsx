@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 export function ExecutiveBanner() {
   return (
     <section className="bg-gradient-to-br from-primary via-primary/90 to-primary/70 rounded-2xl p-6 md:p-10 text-primary-foreground relative overflow-hidden shadow-2xl">
-      <div className="relative z-10">
+      <div className="relative z-10 pb-16 md:pb-0">
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -25,8 +25,8 @@ export function ExecutiveBanner() {
         </motion.p>
       </div>
       
-      <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 group cursor-default">
-        <span className="text-[10px] font-black tracking-[0.2em] uppercase">Executive Intelligence</span>
+      <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 group cursor-default shadow-lg">
+        <span className="text-[9px] md:text-[10px] font-black tracking-[0.2em] uppercase">Executive Intelligence</span>
         <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
       </div>
       
