@@ -115,24 +115,24 @@ export default function LoginPage() {
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-foreground uppercase tracking-widest">Email Address</label>
+            <div className="space-y-2 group/field">
+              <label className="text-xs font-bold text-foreground/60 uppercase tracking-[0.2em] group-focus-within/field:text-primary transition-colors">Email Address</label>
               <input 
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tom@mrakas.ca"
                 required
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium"
+                className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium placeholder:text-muted-foreground/30 shadow-sm"
               />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-foreground uppercase tracking-widest">Password</label>
+            <div className="space-y-2 group/field">
+              <label className="text-xs font-bold text-foreground/60 uppercase tracking-[0.2em] group-focus-within/field:text-primary transition-colors">Password</label>
               <input 
                 type="password" 
                 placeholder="••••••••"
                 required
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium"
+                className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium placeholder:text-muted-foreground/30 shadow-sm"
               />
             </div>
 
