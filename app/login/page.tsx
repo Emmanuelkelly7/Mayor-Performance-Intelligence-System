@@ -49,13 +49,13 @@ export default function LoginPage() {
         <div className="max-w-md relative z-10">
           <motion.div 
             whileHover={{ scale: 1.05, rotate: 5 }}
-            className="relative w-20 h-20 rounded-2xl border-2 border-primary overflow-hidden mb-8 shadow-2xl group"
+            className="relative w-20 h-20 rounded-2xl border-2 border-primary overflow-hidden mb-8 shadow-2xl group bg-white/10 p-2"
           >
             <Image 
               src="/profile_image/Mayor-Mrakas-Masked.png" 
               alt="Mayor Tom Mrakas" 
               fill
-              className="object-cover"
+              className="object-contain p-1"
             />
             <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
@@ -104,7 +104,13 @@ export default function LoginPage() {
       >
         <div className="w-full max-w-sm">
           <div className="mb-12">
-            <h2 className="text-4xl font-black text-foreground mb-3">Sign In</h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest mb-4">
+              <Shield size={10} />
+              <span>Secure Access</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground mb-3 tracking-tighter leading-none">
+              Sign <span className="text-primary">In</span>
+            </h2>
             <p className="text-muted-foreground font-medium">Access your campaign command center.</p>
           </div>
 
